@@ -1,6 +1,6 @@
 {% extends 'layout.php' %} {% block content %}
 <h3>Please log in by supplying your email address and password</h3>
-<form name="login-form" class="two-col" action="/account/web/login" method="post">
+<form name="login-form" class="two-col" action="{{ webroot }}login" method="post">
 
     <div class="form-row">
         <label for="email">Email</label>
