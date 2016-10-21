@@ -20,7 +20,7 @@
     //GLOBALS
     $app['webroot'] = getenv('WEBROOT');
     if ($app['webroot'] == false){
-        $app['webroot'] = $app['webroot'].'';
+        $app['webroot'] = '/account/web/';
     }
     $app['twig']->addGlobal('webroot', $app['webroot']);
 
