@@ -1,0 +1,62 @@
+{% extends "layout.php" %}
+
+{% block content %}
+    <h1>Friend Requests</h1>
+    <div class="requests">
+        {% for user in friend_requests %}
+            <!--friend details-->
+        <div class="request">
+            <div class="pic" style="background: url(/account/web{{ user.avatar_path }})"></div>
+            <div class="name">{{ user.name }}</div>
+            <form class="respond-form" name="respond-form" action="/account/web/respond" method="post">
+                <input type="hidden" name="user-id" value="{{ user.id }}">
+                <input type="submit" name="accept" value="Accept">
+                <input type="submit" name="ignore" value="Ignore">
+            </form>
+        </div>
+            
+        
+        {% else %}
+            <h2>You have no active friend requests.</h2>
+        {% endfor %}
+    </div>
+    
+    <h1>Friends</h1>
+    <div class="friends">
+        {% for user in friends %}
+            <!--friend details-->
+            <div class="friend">
+            <div class="pic" style="background: url(/account/web{{ user.avatar_path }})"></div>
+            <div class="name">{{ user.name }}</div>
+            <form class="view-form" name="view-form" action="/account/web/view" method="post">
+                <input type="hidden" name="user-id" value="{{ user.id }}">
+                <input type="submit" name="view" value="View Profile">
+            </form>
+        </div>
+        {% else %}
+            <h2>You have no friends :&#40;</h2>
+        {% endfor %}
+    </div>
+    
+    <div class="search">
+        <input type="text" id="search-input">
+        <button id="search-button">Search</button>
+    </div>
+
+    <div id="search-results"></div>
+    <script type="text/javascript">
+        $("#search-button").click(function(event){
+            event.preventDefault();
+            $.ajax({
+               url: '/account/web/search',
+               method: 'POST',
+               data: {searchTerm: $("#search-input").val()}
+            }).done(function(html){
+                $("#search-results").html(html);
+            }).fail(function(){
+                $("#search-results").html(
+                "<p>Search Failed. Check Internet</p>");
+            })
+        })
+    </script>
+{% endblock %}

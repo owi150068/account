@@ -1,0 +1,108 @@
+body {
+    background-color: lightblue;
+    margin: 0;
+    font-family: arial;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: dodgerblue;
+    font-family: verdana;
+}
+
+header {
+    display: inline-block;
+    vertical-align: top;
+    width: 18%;
+    margin: 0 1% 0 5%;
+}
+
+main {
+    display: inline-block;
+    vertical-align: top;
+    width: 66%;
+    margin: 0 5% 0 1%;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    padding: 2px 0 2px 0;
+}
+
+nav ul li a {
+    color: purple;
+}
+
+nav ul li a:hover {
+    color: black;
+}
+
+.well {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.pic {
+    width: 128px;
+    height: 128px;
+}
+
+input[type=submit] {
+    border-radius: 2px;
+    color: white;
+    opacity: 0.8;
+    width: 128px;
+    background-color: royalblue;
+}
+
+input[type=submit]:hover {
+    opacity: 1;
+}
+
+input[name=ignore] {
+    background-color: black;
+}
+
+#search-button {
+    background-color: purple;
+    color: white;
+}
+
+.request, .friend, .user {
+    display: inline-block;
+    width: 128px;
+    vertical-align: top;
+}
+
+.search {
+    margin-top 20px;
+}
+
+#banner {
+    color: white;
+    background-color: dodgerblue;
+    text-align: center;
+    font-size: 46px;
+    height: 60px;
+    font-family: verdana;
+    margin-bottom: 10px;
+}
+
+form.two-col label {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 20%;
+}
+
+form.two-col input {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 50%;
+}
+
+form.two-col input[type=submit] {
+    width: 128px;
+}
